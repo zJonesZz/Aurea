@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Áurea - Saúde Mental com Tecnologia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(to bottom, #f5f5f5, #dceef2);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #85c9c6;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #e1f2f3;
+      padding: 1rem;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #4fa1a0;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      width: 100%;
+    }
+    .highlight {
+      background-color: #f0fbfc;
+      border-left: 5px solid #85c9c6;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .feature {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    footer {
+      background-color: #85c9c6;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+    button {
+      background-color: #4fa1a0;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #3c8d8b;
+    }
+    ul {
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+    }
+    form {
+      margin-top: 1rem;
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+      max-width: 500px;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    #feedback, #diaryResponse {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #4fa1a0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Áurea</h1>
+    <p>Tecnologia que sente com você</p>
+  </header>
+  
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#funcionamento">Como Funciona</a>
+    <a href="#interacao">Interações</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre o Projeto</h2>
+    <p>Áurea é um projeto tecnológico voltado para a saúde mental. Propõe um dispositivo discreto, colocado atrás da orelha, capaz de detectar sinais neurais e corporais relacionados às emoções. Conectado a um app com inteligência artificial, interpreta sentimentos e oferece soluções personalizadas.</p>
+    <div class="highlight">“Nem sempre conseguimos explicar o que sentimos. Com o Áurea, você não precisa.”</div>
+  </section>
+
+  <section id="funcionamento">
+    <h2>Como Funciona</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Dispositivo Inteligente</h3>
+        <p>Detecta sinais neurais, frequência cardíaca, respiração e microexpressões com sensores discretos.</p>
+      </div>
+      <div class="feature">
+        <h3>App com IA</h3>
+        <p>Processa dados, interpreta emoções e aprende com você ao longo do tempo.</p>
+      </div>
+      <div class="feature">
+        <h3>Sugestões Personalizadas</h3>
+        <p>Meditações, respiração guiada, música e contato com rede de apoio baseados em seu estado emocional.</p>
+      </div>
+      <div class="feature">
+        <h3>Ética e Acessibilidade</h3>
+        <p>Privacidade total, design inclusivo e modo offline para garantir acesso a todos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="interacao">
+    <h2>Interações com o Usuário</h2>
+    <ul>
+      <li>Assistente emocional empático</li>
+      <li>Gamificação com conquistas e diários emocionais</li>
+      <li>Rede de apoio com partilhas anônimas</li>
+      <li>Modo silencioso para monitoramento passivo</li>
+    </ul>
+
+    <button onclick="mostrarMensagem()">Mensagem Aleatória de Apoio</button>
+    <p id="mensagem" style="margin-top:1rem; font-style: italic;"></p>
+
+    <hr style="margin: 2rem 0;" />
+
+    <h3>Mini Questionário Emocional</h3>
+    <form id="emocionalForm" onsubmit="return processarQuestionario(event)">
+      <label for="humor">Como você está se sentindo agora?</label>
+      <select id="humor" required>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="estressado">Estressado(a)</option>
+        <option value="ansioso">Ansioso(a)</option>
+        <option value="triste">Triste</option>
+        <option value="feliz">Feliz</option>
+        <option value="neutro">Neutro</option>
+        <option value="confuso">Confuso(a)</option>
+      </select>
+
+      <label for="energia">Nível de energia</label>
+      <select id="energia" required>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="alta">Alta</option>
+        <option value="moderada">Moderada</option>
+        <option value="baixa">Baixa</option>
+      </select>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="feedback"></p>
+
+    <hr style="margin: 2rem 0;" />
+
+    <h3>Diário Emocional Rápido</h3>
+    <form id="diaryForm" onsubmit="return registrarDiario(event)">
+      <label for="diaryText">Escreva como você está se sentindo em poucas palavras:</label>
+      <textarea id="diaryText" rows="4" placeholder="Eu me sinto..." required></textarea>
+      <button type="submit">Registrar</button>
+    </form>
+    <p id="diaryResponse"></p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Quer saber mais? Entre em contato: <a href="mailto:contato@aurea.com">contato@aurea.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Áurea. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function mostrarMensagem() {
+      const mensagens = [
+        'Tudo bem não estar bem. Estou aqui com você.',
+        'Respire fundo. Vamos juntos encontrar um caminho.',
+        'Você é importante. O que sente importa.',
+        'Estou sentindo que você precisa de uma pausa. Que tal uma meditação de 3 minutos?'
+      ];
+      const msg = mensagens[Math.floor(Math.random() * mensagens.length)];
+      document.getElementById('mensagem').textContent = msg;
+    }
+
+    function processarQuestionario(event) {
+      event.preventDefault();
+      const humor = document.getElementById('humor').value;
+      const energia = document.getElementById('energia').value;
+      const feedbackEl = document.getElementById('feedback');
+      let sugestao = '';
+
+      if (humor === 'estressado' || humor === 'ansioso') {
+        sugestao = 'Que tal uma meditação guiada para aliviar o estresse?';
+      } else if (humor === 'triste') {
+        sugestao = 'Ouvir música calma pode ajudar a elevar seu ânimo.';
+      } else if (humor === 'feliz') {
+        sugestao = 'Ótimo! Continue cuidando de sua energia positiva!';
+      } else if (humor === 'neutro' || humor === 'confuso') {
+        sugestao = 'Praticar exercícios de respiração pode ajudar a clarear seus pensamentos.';
+      }
+
+      if (energia === 'baixa') {
+        sugestao += ' E lembre-se de fazer pausas para recarregar as energias.';
+      }
+
+      feedbackEl.textContent = sugestao;
+      return false;
+    }
+
+    function registrarDiario(event) {
+      event.preventDefault();
+      const texto = document.getElementById('diaryText').value.trim();
+      const resposta = document.getElementById('diaryResponse');
+
+      if (texto.length < 3) {
+        resposta.textContent = 'Por favor, escreva um pouco mais para registrar seu sentimento.';
+        resposta.style.color = 'red';
+        return false;
+      }
+
+      resposta.style.color = '#4fa1a0';
+      resposta.textContent = 'Obrigado por compartilhar seus sentimentos! Lembre-se de cuidar de você.';
+
+      // Aqui poderia haver integração para salvar no backend ou localStorage
+      document.getElementById('diaryText').value = '';
+      return false;
+    }
+  </script>
+</body>
+</html>
