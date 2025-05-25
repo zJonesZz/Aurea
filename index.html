@@ -35,6 +35,7 @@
       gap: 2rem;
       background-color: #e1f2f3;
       padding: 1rem;
+      flex-wrap: wrap;
     }
     nav a {
       color: #333;
@@ -121,18 +122,47 @@
       font-style: italic;
       color: #4fa1a0;
     }
+
+    /* Galeria */
+    #galeria {
+      padding: 2rem;
+      background-color: #f9fefe;
+      text-align: center;
+    }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .galeria-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .galeria-grid img:hover {
+      transform: scale(1.03);
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Áurea</h1>
-    <p>Tecnologia que sente com você</p>
-  </header>
+<header>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <img src="imagens/logo.jpg" alt="Logo Áurea" style="height: 80px; border-radius: 10px;" />
+    <div>
+      <h1>Áurea</h1>
+      <p>Tecnologia que sente com você</p>
+    </div>
+  </div>
+</header>
   
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#funcionamento">Como Funciona</a>
     <a href="#interacao">Interações</a>
+    <a href="#galeria">Galeria</a>
     <a href="#contato">Contato</a>
   </nav>
 
@@ -214,6 +244,16 @@
     <p id="diaryResponse"></p>
   </section>
 
+  <section id="galeria">
+    <h2>Galeria Áurea</h2>
+    <p>Veja alguns registros visuais do desenvolvimento e inspiração por trás do projeto.</p>
+    <div class="galeria-grid">
+      <img src="imagens/imagem1.jpg" alt="Conceito Áurea 1">
+      <img src="imagens/imagem2.jpg" alt="Conceito Áurea 2">
+      <img src="imagens/imagem3.jpg" alt="Conceito Áurea 3">
+    </div>
+  </section>
+
   <section id="contato">
     <h2>Contato</h2>
     <p>Quer saber mais? Entre em contato: <a href="mailto:contato@aurea.com">contato@aurea.com</a></p>
@@ -274,7 +314,6 @@
       resposta.style.color = '#4fa1a0';
       resposta.textContent = 'Obrigado por compartilhar seus sentimentos! Lembre-se de cuidar de você.';
 
-      // Aqui poderia haver integração para salvar no backend ou localStorage
       document.getElementById('diaryText').value = '';
       return false;
     }
